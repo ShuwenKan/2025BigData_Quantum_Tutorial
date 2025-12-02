@@ -1,11 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>My Project Website</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProT204 – Big Data Processing in the Era of Quantum Computing</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+}
+header {
+    background: #003366;
+    color: #fff;
+    padding: 30px 20px;
+    text-align: center;
+}
+.tab-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    background: #e5e5e5;
+    border-bottom: 2px solid #ccc;
+}
+.tab-buttons button {
+    padding: 12px 18px;
+    border: none;
+    background: #e5e5e5;
+    cursor: pointer;
+    font-size: 16px;
+}
+.tab-buttons button.active {
+    background: #fff;
+    border-bottom: 3px solid #003366;
+    font-weight: bold;
+}
+.tab-content {
+    display: none;
+    padding: 20px;
+    background: #fff;
+}
+.tab-content.active {
+    display: block;
+}
+section {
+    line-height: 1.6;
+}
+</style>
+
+<script>
+function openTab(evt, tabName) {
+    var i, content, buttons;
+    content = document.getElementsByClassName("tab-content");
+    buttons = document.getElementsByClassName("tab-btn");
+
+    for (i = 0; i < content.length; i++) {
+        content[i].classList.remove("active");
+    }
+    for (i = 0; i < buttons.length; i++) {
+        buttons[i].classList.remove("active");
+    }
+    document.getElementById(tabName).classList.add("active");
+    evt.currentTarget.classList.add("active");
+}
+window.onload = function() {
+    document.getElementsByClassName("tab-btn")[0].click();
+};
+</script>
 </head>
+
 <body>
-  <h1>Hello from GitHub Pages!</h1>
-  <p>This is my free project website.</p>
+
+<header>
+    <h1>ProT204 – Big Data Processing in the Era of Quantum Computing</h1>
+    <p>Hybrid HPC & GPU-Accelerated Quantum Workflows with NVIDIA CUDA-Q</p>
+</header>
+
+<div class="tab-buttons">
+    <button class="tab-btn" onclick="openTab(event,'Overview')">Overview</button>
+    <button class="tab-btn" onclick="openTab(event,'About')">About</button>
+    <button class="tab-btn" onclick="openTab(event,'Audience')">Who Should Attend</button>
+    <button class="tab-btn" onclick="openTab(event,'Agenda')">Agenda</button>
+    <button class="tab-btn" onclick="openTab(event,'Speakers')">Speakers</button>
+    <button class="tab-btn" onclick="openTab(event,'Materials')">Materials</button>
+    <button class="tab-btn" onclick="openTab(event,'Venue')">Venue & Time</button>
+    <button class="tab-btn" onclick="openTab(event,'Contact')">Contact</button>
+</div>
+
+<!-- Overview -->
+<div id="Overview" class="tab-content">
+    <h2>Overview</h2>
+    <section>
+        <p>
+            Quantum computing is rapidly transitioning from experimental systems to practical tools 
+            that complement modern high-performance computing. This tutorial introduces attendees 
+            to the emerging landscape of hybrid quantum–classical systems, where GPUs, CPUs, and 
+            quantum processors work together to accelerate data-intensive workloads.
+        </p>
+        <p>
+            Using <strong>NVIDIA CUDA-Q</strong>, we demonstrate how computational pipelines can 
+            integrate quantum devices with classical HPC resources, enabling new possibilities for 
+            optimization, simulation, and machine learning.
+        </p>
+    </section>
+</div>
+
+<!-- About -->
+<div id="About" class="tab-content">
+    <h2>About the Tutorial</h2>
+    <section>
+        <p>
+            This hands-on, application-focused session bridges the gap between modern Big Data workflows 
+            and the growing capabilities of quantum computing. Participants will learn how hybrid 
+            systems operate, how quantum programs are executed, and how classical accelerators such as GPUs 
+            complement quantum processors.
+        </p>
+        <p>
+            By the end of the tutorial, attendees will understand:
+        </p>
+        <ul>
+            <li>The basics of quantum computation and quantum circuits</li>
+            <li>How hybrid pipelines are orchestrated across CPUs, GPUs, and QPUs</li>
+            <li>Where quantum techniques may offer advantages in Big Data contexts</li>
+            <li>How to build and run simple quantum programs with CUDA-Q</li>
+        </ul>
+    </section>
+</div>
+
+<!-- Audience -->
+<div id="Audience" class="tab-content">
+    <h2>Who Should Attend</h2>
+    <section>
+        <p>This tutorial is ideal for:</p>
+        <ul>
+            <li>Big Data researchers exploring advanced compute paradigms</li>
+            <li>Engineers interested in hybrid quantum–classical workflows</li>
+            <li>Students and newcomers who want a guided introduction to quantum computing</li>
+            <li>Practitioners already familiar with HPC or GPU computing who want to understand quantum integration</li>
+        </ul>
+        <p><strong>No prior experience with quantum computing is required.</strong></p>
+    </section>
+</div>
+
+<!-- Agenda -->
+<div id="Agenda" class="tab-content">
+    <h2>Agenda</h2>
+    <section>
+        <ol>
+            <li><strong>Welcome & Motivation</strong> – Why quantum + HPC matters today</li>
+            <li><strong>Quantum Computing Essentials</strong> – Qubits, gates, circuits</li>
+            <li><strong>Quantum Hardware Today</strong> – Understanding NISQ devices</li>
+            <li><strong>Hybrid Workflows</strong> – Merging CPUs, GPUs, and QPUs</li>
+            <li><strong>CUDA-Q Programming</strong> – Building and running basic hybrid jobs</li>
+            <li><strong>Case Study</strong> – Example applications in data-driven workloads</li>
+            <li><strong>Q&A and Discussion</strong></li>
+        </ol>
+    </section>
+</div>
+
+<!-- Speakers -->
+<div id="Speakers" class="tab-content">
+    <h2>Speakers</h2>
+    <section>
+        <h3>Shuwen Kan – Fordham University</h3>
+        <p>
+            Researcher specializing in quantum computing, high-performance systems, and 
+            hybrid computational workflows. Shuwen focuses on building bridges between 
+            classical HPC and emerging quantum technologies.
+        </p>
+
+        <h3>Ying Mao – Fordham University</h3>
+        <p>
+            Expert in distributed systems, machine learning, and large-scale data processing. 
+            Ying's work explores the intersection of Big Data and emerging compute platforms.
+        </p>
+    </section>
+</div>
+
+<!-- Materials -->
+<div id="Materials" class="tab-content">
+    <h2>Materials</h2>
+    <section>
+        <p>Materials will be made available before and after the session:</p>
+        <ul>
+            <li>Slide deck (PDF)</li>
+            <li>Introductory quantum programming examples</li>
+            <li>CUDA-Q demo scripts</li>
+            <li>Links to additional resources</li>
+        </ul>
+        <p>All materials will be posted here.</p>
+    </section>
+</div>
+
+<!-- Venue -->
+<div id="Venue" class="tab-content">
+    <h2>Venue & Time</h2>
+    <section>
+        <p><strong>Date:</strong> December 9 (Tuesday), 2025</p>
+        <p><strong>Time:</strong> 16:30–18:00</p>
+        <p><strong>Location:</strong> Auditorium – IEEE Big Data 2025, Macau SAR, China</p>
+    </section>
+</div>
+
+<!-- Contact -->
+<div id="Contact" class="tab-content">
+    <h2>Contact</h2>
+    <section>
+        <p>For questions or further information, please contact:</p>
+        <p><strong>Shuwen Kan</strong><br>Fordham University<br>Email: TBD</p>
+    </section>
+</div>
+
 </body>
 </html>
